@@ -1,0 +1,168 @@
+import("//build/ohos.gni")
+
+config("amr_config") {
+  cflags = [
+    "-Wall",
+    "-fno-rtti",
+    "-fno-exceptions",
+    "-fno-common",
+    "-fstack-protector-strong",
+    "-Wshadow",
+    "-FPIC",
+    "-FS",
+    "-O2",
+    "-D_FORTIFY_SOURCE=2",
+    "-Wformat=2",
+    "-Wdate-time",
+    "-Wextra",
+    "-Wimplicit-fallthrough",
+    "-Wsign-compare",
+    "-Wno-unused-parameter",
+    "-Wno-deprecated-declarations",
+    "-Wno-register",
+    "-DDISABLE_AMRNB_DECODER",
+  ]
+  cflags_cc =  [
+    "-std=c++17",
+  ]
+}
+
+ohos_shared_library("opencore_amr_alg") {
+  install_enable = true
+  public_configs = [
+    ":amr_config",
+  ]
+  sanitize = {
+    cfi = true
+    cfi_cross_dso = true
+    debug = false
+  }
+  sources = [
+    "../amrnb/wrapper.cpp",
+    # amrnb common
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/add.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/az_lsp.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/bitno_tab.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/bitreorder_tab.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/c2_9pf_tab.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/div_s.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/gains_tbl.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/gc_pred.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/get_const_tbls.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/gmed_n.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/grid_tbl.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/gray_tbl.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/int_lpc.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/inv_sqrt.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/inv_sqrt_tbl.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/l_shr_r.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/log2.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/log2_norm.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/log2_tbl.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/lsfwt.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/lsp.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/lsp_az.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/lsp_lsf.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/lsp_lsf_tbl.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/lsp_tab.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/mult_r.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/norm_l.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/norm_s.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/ph_disp_tab.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/pow2.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/pow2_tbl.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/pred_lt.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/q_plsf.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/q_plsf_3.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/q_plsf_3_tbl.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/q_plsf_5.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/q_plsf_5_tbl.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/qua_gain_tbl.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/reorder.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/residu.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/round.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/shr.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/shr_r.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/sqrt_l.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/sqrt_l_tbl.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/sub.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/syn_filt.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/weight_a.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/src/window_tab.cpp",
+
+    # for amrnb enc
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/amrencode.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/autocorr.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/c1035pf.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/c2_11pf.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/c2_9pf.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/c3_14pf.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/c4_17pf.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/c8_31pf.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/calc_cor.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/calc_en.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/cbsearch.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/cl_ltp.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/cod_amr.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/convolve.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/cor_h.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/cor_h_x.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/cor_h_x2.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/corrwght_tab.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/div_32.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/dtx_enc.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/enc_lag3.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/enc_lag6.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/enc_output_format_tab.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/ets_to_if2.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/ets_to_wmf.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/g_adapt.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/g_code.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/g_pitch.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/gain_q.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/hp_max.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/inter_36.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/inter_36_tab.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/l_abs.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/l_comp.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/l_extract.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/l_negate.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/lag_wind.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/lag_wind_tab.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/levinson.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/lpc.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/ol_ltp.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/p_ol_wgh.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/pitch_fr.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/pitch_ol.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/pre_big.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/pre_proc.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/prm2bits.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/q_gain_c.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/q_gain_p.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/qgain475.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/qgain795.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/qua_gain.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/s10_8pf.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/set_sign.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/sid_sync.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/sp_enc.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/spreproc.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/spstproc.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/ton_stab.cpp",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/vad1.cpp",
+  ]
+
+  include_dirs = [
+    "../amrnb",
+    "../oscl",
+    # amrnb common
+    "./codecs_v2/audio/gsm_amr/amr_nb/common/include/",
+    # for amrnb enc
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/",
+    "./codecs_v2/audio/gsm_amr/amr_nb/enc/include/",
+  ]
+  configs = [ ":amr_config" ]
+  part_name = "opencore_amr"
+  subsystem_name = "open_source"
+}
