@@ -1,44 +1,44 @@
 {
-"name": "@ohos/opencore_amr",
-"description": "amr support",
-"version": "0.1.6",
-"license": "Apache License 2.0",
-"publishAs": "code-segment",
-"segment": {
-"destPath": "vendor/open_source/opencore_amr"
-},
-"dirs": {},
-"scripts": {},
-"component": {
-"name": "opencore_amr",
-"subsystem": "open_source",
-"syscap": [],
-"features": [],
-"adapted_system_type": [ "standard" ],
-"rom": "10000KB",
-"ram": "10000KB",
-"hisysevent_config": [],
-"deps": {
-  "components": [
-    "c_utils",
-    "hilog",
-    "ipc",
-    "media_foundation",
-    "av_codec"
-  ],
-  "third_party": []
-},
-"build": {
-  "inner_kits": [],
-  "test": [
-  ],
-  "group_type": {
-    "base_group": [],
-    "fwk_group": [
-      "//vendor/open_source/opencore_amr/opencore:opencore_amr_alg"
+  "name": "@ohos/opencore_amr",
+  "description": "amr support",
+  "version": "0.1.6",
+  "license": "Apache License 2.0",
+  "publishAs": "code-segment",
+  "segment": {
+  "destPath": "vendor/open_source/opencore_amr"
+  },
+  "dirs": {},
+  "scripts": {},
+  "component": {
+  "name": "opencore_amr",
+  "subsystem": "open_source",
+  "syscap": [],
+  "features": [],
+  "adapted_system_type": [ "standard" ],
+  "rom": "10000KB",
+  "ram": "10000KB",
+  "hisysevent_config": [],
+  "deps": {
+    "components": [
+      "c_utils",
+      "hilog",
+      "ipc",
+      "media_foundation",
+      "av_codec"
     ],
-    "service_group": []
+    "third_party": []
+  },
+  "build": {
+    "inner_kits": [],
+    "test": [
+    ],
+    "group_type": {
+      "base_group": [],
+      "fwk_group": [
+        "//vendor/open_source/opencore_amr/opencore:opencore_amr_alg"
+      ],
+      "service_group": []
+    }
   }
-}
 }
 }

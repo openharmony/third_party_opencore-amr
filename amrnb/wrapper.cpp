@@ -17,10 +17,12 @@
  */
 
 #define AMRNB_WRAPPER_INTERNAL
+#ifndef DISABLE_AMRNB_DECODER
 #include <sp_dec.h>
 #include <amrdecode.h>
-#include <amrencode.h>
 #include "interf_dec.h"
+#endif
+#include <amrencode.h>
 #include "interf_enc.h"
 #include <stdlib.h>
 
