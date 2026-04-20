@@ -1,17 +1,17 @@
 {
-  "name": "@ohos/opencore_amr",
+  "name": "@ohos/opencore-amr",
   "description": "amr support",
   "version": "0.1.6",
   "license": "Apache License 2.0",
   "publishAs": "code-segment",
   "segment": {
-  "destPath": "vendor/open_source/opencore_amr"
+  "destPath": "third_party/opencore-amr"
   },
   "dirs": {},
   "scripts": {},
   "component": {
-  "name": "opencore_amr",
-  "subsystem": "open_source",
+  "name": "opencore-amr",
+  "subsystem": "thirdparty",
   "syscap": [],
   "features": [],
   "adapted_system_type": [ "standard" ],
@@ -35,7 +35,7 @@
     "group_type": {
       "base_group": [],
       "fwk_group": [
-        "//vendor/open_source/opencore_amr/opencore:opencore_amr_alg"
+        "//third_party/opencore-amr/opencore:opencore_amr_alg"
       ],
       "service_group": []
     }

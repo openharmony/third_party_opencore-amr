@@ -176,6 +176,6 @@ ohos_shared_library("opencore_amr_alg") {
     "./codecs_v2/audio/gsm_amr/amr_nb/enc/include/",
   ]
   configs = [ ":amr_config" ]
-  part_name = "opencore_amr"
-  subsystem_name = "open_source"
+  part_name = "opencore-amr"
+  subsystem_name = "thirdparty"
 }
