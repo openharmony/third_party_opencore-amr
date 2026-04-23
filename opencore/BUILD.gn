@@ -176,15 +176,6 @@ ohos_shared_library("opencore_amr_alg") {
     "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/vad1.cpp",
   ]
 
-  include_dirs = [
-    "../amrnb",
-    "../oscl",
-    # amrnb common
-    "./codecs_v2/audio/gsm_amr/amr_nb/common/include/",
-    # for amrnb enc
-    "./codecs_v2/audio/gsm_amr/amr_nb/enc/src/",
-    "./codecs_v2/audio/gsm_amr/amr_nb/enc/include/",
-  ]
   configs = [ ":amr_config" ]
   part_name = "opencore-amr"
   subsystem_name = "thirdparty"
