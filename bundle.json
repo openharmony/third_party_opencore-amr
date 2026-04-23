@@ -29,9 +29,17 @@
     "third_party": []
   },
   "build": {
-    "inner_kits": [],
-    "test": [
+    "inner_kits": [
+      {
+        "type": "so",
+        "name": "//third_party/opencore-amr/opencore:opencore_amr_alg",
+        "header": {
+          "header_files": [],
+          "header_base": "//third_party/opencore-amr"
+        }
+      }
     ],
+    "test": [],
     "group_type": {
       "base_group": [],
       "fwk_group": [

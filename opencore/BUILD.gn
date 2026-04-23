@@ -38,6 +38,16 @@ config("amr_config") {
   cflags_cc =  [
     "-std=c++17",
   ]
+  include_dirs = [
+    "//third_party/opencore-amr",
+    "//third_party/opencore-amr/amrnb",
+    "//third_party/opencore-amr/oscl",
+    # amrnb common
+    "//third_party/opencore-amr/opencore/codecs_v2/audio/gsm_amr/amr_nb/common/include/",
+    # for amrnb enc
+    "//third_party/opencore-amr/opencore/codecs_v2/audio/gsm_amr/amr_nb/enc/src/",
+    "//third_party/opencore-amr/opencore/codecs_v2/audio/gsm_amr/amr_nb/enc/include/",
+  ]
 }
 
 ohos_shared_library("opencore_amr_alg") {
