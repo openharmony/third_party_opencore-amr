@@ -1,0 +1,9 @@
+[
+  {
+    "Name": "opencore-amr",
+    "License": "Apache-2.0",
+    "LicenseFile": "LICENSE",
+    "Version": "0.1.6",
+    "UpstreamURL": "https://sourceforge.net/projects/opencore-amr/"
+  }
+]
