@@ -30,6 +30,11 @@ AMR 在 AVCodec 音频编码链路中的调用关系如下：
 - **音频输出层**：输出 AMR 编码码流。
 
 ## 3. AVCodec 运行时调用流程
+<div align="center">
+  <img src="zh-cn_image_amr.png" alt="AMR调用流程图" />
+  <br>
+  <b>图 1</b> AMR调用流程图
+</div>
 0. 进程装载 AVCodec 相关共享库时，动态链接器根据依赖关系装载 `libopencore_amr_alg.z.so`。
 1. 应用通过 AVCodec API 创建音频编码实例，并设置 AMR 格式参数。
 2. Framework 实现层接收配置并初始化编码请求。
