@@ -20,8 +20,7 @@
   "hisysevent_config": [],
   "deps": {
     "components": [
-      "c_utils",
-      "hilog"
+      "c_utils"
     ],
     "third_party": []
   },
