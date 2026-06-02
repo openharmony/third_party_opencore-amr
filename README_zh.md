@@ -33,6 +33,7 @@ AMR 在 AVCodec 音频编码链路中的调用关系如下：
   <br>
   <b>图 1</b> AMR调用流程图
 </div>
+<br>
 
 **说明**：AMR 在 AVCodec 中为编码链路。`libopencore_amr_alg.z.so` 通过 BUILD.gn deps 进入依赖图，库装载发生在进程装载相关共享库阶段，而不是首次编码时再通过 `dlopen` 装载。
 
