@@ -47,6 +47,7 @@
                 <filteritem type="filepath" name=".vscode/.*" desc="Exclude VS Code configuration files."/>
                 <filteritem type="filename" name=".*\.log" desc="Exclude log files."/>
                 <filteritem type="filename" name=".*\.tmp" desc="Exclude temporary files."/>
+                <filteritem type="filename" name="Makefile.am" desc="Automake build configuration file, contains no licensable content."/>
             </filefilter>
             <!-- Filter for binary file type policy -->
             <filefilter name="binaryFileTypePolicyFilter" desc="Filters for binary file type policies">
