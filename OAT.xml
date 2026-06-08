@@ -65,12 +65,6 @@
                 <filteritem type="filepath" name="testdata/.*" desc="Exclude test data files."/>
                 <filteritem type="filepath" name="third_party/.*" desc="Exclude third-party source code embedded in the repository."/>
             </filefilter>
-            <filefilter name="binaryFileTypePolicyFilter" desc="Invalid File Type">
-                <filteritem
-                    type="filepath"
-                    name="zh-cn_image_amr.png"
-                    desc="README figures"/>
-            </filefilter>
         </filefilterlist>
     </oatconfig>
 </configuration>
