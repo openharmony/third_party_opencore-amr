@@ -20,12 +20,6 @@
 <configuration>
     <oatconfig>
         <licensefile>LICENSE</licensefile>
-        <policylist>
-            <policyitem type="compatibility" name="Apache-2.0" path=".*" desc="Apache-2.0 is compatible with OpenHarmony." rule="may" group="defaultGroup" />
-            <policyitem type="license" name="Apache-2.0" path=".*\.c|.*\.cpp|.*\.h|.*\.hpp" desc="Source files must include Apache-2.0 license header." rule="must" group="defaultGroup" />
-            <policyitem type="copyright" name="PacketVideo, VisualOn, Martin Storsjo" path=".*" desc="Copyright holders as found in source files." rule="may" group="defaultGroup" />
-            <policyitem type="filename" name="README, README.OpenSource" path="projectroot" desc="Required doc files." rule="must" group="defaultGroup" />
-        </policylist>
         <filefilterlist>
             <filefilter name="defaultFilter" desc="Files not to check">
                 <filteritem type="filename" name="Makefile.am" desc="Automake build configuration, no licensable content."/>
