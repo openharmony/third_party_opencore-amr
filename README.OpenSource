@@ -4,6 +4,9 @@
     "License": "Apache-2.0",
     "LicenseFile": "LICENSE",
     "Version": "0.1.6",
-    "UpstreamURL": "https://sourceforge.net/projects/opencore-amr/"
+    "Owner": "chenxin666@huawei.com",
+    "Description": "A library contains an implementation of the 3GPP TS 26.073 specification for the Adaptive Multi Rate (AMR) speech codec and an implementation for the 3GPP TS 26.173 specification for the Adaptive Multi-Rate - Wideband (AMR-WB)speech decoder.",
+    "UpstreamURL": "https://sourceforge.net/projects/opencore-amr/",
+    "Dependencies": "c_utils"
   }
 ]
