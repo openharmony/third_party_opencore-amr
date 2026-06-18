@@ -30,8 +30,10 @@
         "type": "so",
         "name": "//third_party/opencore-amr/opencore:opencore_amr_alg",
         "header": {
-          "header_files": [],
-          "header_base": "//third_party/opencore-amr"
+          "header_files": [
+            "interf_enc.h"
+          ],
+          "header_base": "//third_party/opencore-amr/amrnb"
         }
       }
     ],
